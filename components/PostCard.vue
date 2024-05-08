@@ -1,33 +1,43 @@
 <template>
-
-    <div class="rounded-[1rem] border border-gray-300 w-[32rem] bg-sky-800 bg-opacity-[1%] hover:border-sky-400 duration-300 transition-all ease-in-out">
-        <div class="h-[3rem] w-full bg-slate-100 p-2 rounded-tl-[1rem] rounded-tr-[1rem] flex items-center"> <!-- Head -->
-            <div class="flex flex-row gap-1 items-center h-full w-full">
-            <div class="ml-2 rounded-full h-[1.7rem] w-[1.7rem] border border-gray-300 text-[0.7rem] font-medium flex justify-center items-center">{{ initials }}</div>
-            <h2 class="font-normal ml-2">{{ Username }}</h2>
-            </div>
-        </div> 
-
-        <div class=" w-full p-4 rounded-bl-[1rem] rounded-br-[1rem]"> <!-- body -->
-            <p class="font-light text-[0.9rem]">{{ Content }}</p>
-        </div>
+    <div class="cursor-pointer text-black w-full rounded-[1rem] hover:border-black border border-gray-300 bg-sky-400 bg-opacity-[1%] p-4">
+    <div class="flex justify-between">
+        <h1 class="font-semibold text-[1.3rem]">{{ title }}</h1>
+        <p class="opacity-60">{{ category }}</p>
     </div>
+        <div>
+            <p class="font-medium text-black opacity-80 text-[1rem]">{{ sub_title }}</p>
+        </div>
+    <div class="my-2 h-[0.5px] bg-gray-300 w-full"></div>
+
+    <div>
+        <p class="line-clamp-2" v-html="body"></p>
+    </div>
+
+
+<div class="flex justify-between opacity-70 mt-4 items-center h-[1rem]">
+    <p>{{ name }}</p>
+    <p class="text-[0.9rem]">{{ email }}</p>
+</div>
+
+
+
+
+</div>
 </template>
 
 <script setup>
-import { defineProps, computed } from 'vue';
 
 const props = defineProps({
-    Username: String,
-    Content: String,
-    FirstName: String,
-    LastName: String
-})
-
-const initials = computed(() => {
-  const firstInitial = props.FirstName.charAt(0).toUpperCase();
-  const secondInitial = props.LastName.charAt(0).toUpperCase();
-  return `${firstInitial}${secondInitial}`;
+name: String,
+user_id: String, 
+email: String, 
+tags: Array,
+title: String,
+id: String,
+sub_title: String,
+status: String,
+body: String,
+category: String,
 });
 
 </script>

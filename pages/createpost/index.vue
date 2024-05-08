@@ -20,7 +20,7 @@
                 class="pl-2 rounded-[1rem] border border-gray-300 focus:border-sky-400 focus:border-2 focus:outline-none w-full h-[2.5rem]"
                 />
                 <input 
-                placeholder="Nachname...."
+                placeholder="Nachname..."
                 v-model="inputLastName"
                 class="pl-2 rounded-[1rem] border border-gray-300 focus:border-sky-400 focus:border-2 focus:outline-none w-full"
                 />
